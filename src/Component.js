@@ -35,12 +35,12 @@ const Component = ({ans,correct,ques}) => {
                 <div className="card-options">
                     <div className="quiz-card">
                         <div className="row1">
-                        <DraggableOption optionText={ans[0]} optionId={0} />
-                        <DraggableOption optionText={ans[1]} optionId={1}/>
+                        <DraggableOption optionText={ans[0].name} optionId={ans[0].id} />
+                        <DraggableOption optionText={ans[1].name} optionId={ans[1].id}/>
                         </div>
                         <div className="row2">
-                        <DraggableOption optionText={ans[2]}optionId={2} />
-                        <DraggableOption optionText={ans[3]} optionId={3} />
+                        <DraggableOption optionText={ans[2].name}optionId={ans[2].id} />
+                        <DraggableOption optionText={ans[3].name} optionId={ans[3].id} />
                         </div>
                     </div>
                 </div>
