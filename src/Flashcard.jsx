@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import "./FlashCard.css";
 
-const Flashcard = ({ ans, ques,correct }) => {
+const Flashcard = ({ ans, ques, correct }) => {
+  const row1 = [ans[0],ans[1]];
+  const row2 = [ans[2],ans[3]];
+  
   const [isFlipped, setIsFlipped] = useState(false);
-    const handleChkAns = (e) => {
-        if (ans[correct] == e.target.innerText) {
+  const handleChkAns = (e) => {
+
+        if (correct == e.target.innerText) {
             alert("Correct Answer!")
         }
         else {
@@ -24,20 +28,21 @@ const Flashcard = ({ ans, ques,correct }) => {
       <div className="card" onClick={() => {
             setIsFlipped(!isFlipped);
           }}>
-        <div ></div>
+        
         <h2 style={{ color: "blue", fontSize: "2rem" }}>{ques}</h2>
         <div className="card-body">
           <div className="card-options">
           <div className="quiz-card">
               <div className="row1">
-                {ans.slice(0, 2).map((option) => (
+                {row1.map((option) => (
                     <div onClick={handleChkAns } className="option" key={option.id}>
                     <label htmlFor={option.id}>{option.name}</label>
                   </div>
                 ))}
               </div>
               <div className="row2">
-                {ans.slice(2, 4).map((option) => (
+                {row2.map((option) => (
+                 
                   <div onClick={handleChkAns } className="option" key={option.id}>
                     <label htmlFor={option.id}>{option.name}</label>
                   </div>
