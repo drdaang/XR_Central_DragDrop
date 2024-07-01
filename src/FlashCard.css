@@ -135,8 +135,17 @@ body {
   }
 }
 @media only screen and (max-width: 512px) {
+  .reveal h1{
+    font-size:x-large;
+  }
+  .reveal{
+    height:60vh;
+    
+  }
   .card {
     align-items: center;
+    justify-content: center;
+    height: fit-content;
   }
   .card-body {
     margin-top: 4vh;
